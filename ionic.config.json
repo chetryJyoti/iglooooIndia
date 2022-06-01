@@ -1,0 +1,7 @@
+{
+  "name": "iglooIndia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
