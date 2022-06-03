@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-no-border" >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <h1>Signup</h1>
+    <h3>Providing Best deals at Minimum charges</h3>
+  </div>
+  <form [formGroup]="form">
+    <!-- username -->
+    <ion-item lines="none">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input
+        formControlName="name"
+        type="text"
+        placeholder="Name"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="error"
+      color="danger"
+      *ngIf="!form.get('name').valid && form.get('name').touched"
+    >
+      <ion-text *ngIf="form.get('name').hasError('required')"
+        >**Please enter your username</ion-text
+      >
+      <ion-text
+        *ngIf="!form.get('name').hasError('required') && form.get('name').hasError('name')"
+        >**Please enter proper username</ion-text
+      >
+    </ion-text>
+
+    <!--phone number  -->
+    <ion-item lines="none">
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input
+        formControlName="phone"
+        type="text"
+        placeholder="Number"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="error"
+      color="danger"
+      *ngIf="!form.get('phone').valid && form.get('phone').touched"
+    >
+      <ion-text *ngIf="form.get('phone').hasError('required')"
+        >**Please enter your phone no.</ion-text
+      >
+      <ion-text
+        *ngIf="!form.get('phone').hasError('required') && form.get('phone').hasError('pattern')"
+        >**Phone enter valid phone no.</ion-text
+      >
+    </ion-text>
+
+    <!--  email-->
+    <ion-item lines="none">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        type="email"
+        placeholder="email"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="error"
+      color="danger"
+      *ngIf="!form.get('email').valid && form.get('email').touched"
+    >
+      <ion-text *ngIf="form.get('email').hasError('required')"
+        >**Please enter your Email Add.</ion-text
+      >
+      <ion-text
+        *ngIf="!form.get('email').hasError('required') && form.get('email').hasError('email')"
+        >**Please enter proper email Add.</ion-text
+      >
+    </ion-text>
+
+    <!--password  -->
+    <ion-item lines="none">
+      <ion-label position="floating">Create Password</ion-label>
+      <ion-input
+        formControlName="password"
+        type="password"
+        placeholder="password"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="error"
+      color="danger"
+      *ngIf="!form.get('password').valid && form.get('password').touched"
+    >
+      <ion-text *ngIf="form.get('password').hasError('required')"
+        >**Please create password</ion-text
+      >
+      <ion-text
+        *ngIf="!form.get('password').hasError('required') && form.get('password').hasError('minlength')"
+      >
+        **password must be atleast 8 characters</ion-text
+      >
+    </ion-text>
+    <!--confirm password  -->
+    <ion-item lines="none">
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input
+        type="password"
+        placeholder="confirm password"
+        required
+      ></ion-input>
+    </ion-item>
+    <!--  -->
+    <ion-button
+      size="large"
+      type="submit"
+      color="secondary"
+      expand="block"
+      (click)="onSubmit()"
+      [disabled]="!form.valid"
+      >Register</ion-button
+    >
+  </form>
+  <div class="footer">
+    <h5>Already have a account?</h5>
+    <ion-button routerLink="/login" fill="clear">Signin</ion-button>
+  </div>
+</ion-content>

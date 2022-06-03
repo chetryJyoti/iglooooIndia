@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-no-border" >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <h1>Welcome back</h1>
+    <img src="/assets/svg/welcome.svg" width="300px" height="200px" alt="" />
+  </div>
+  <form [formGroup]="form">
+    <!-- for phone number validations -->
+    <ion-item lines="none">
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input
+        formControlName="phone"
+        type="text"
+        placeholder="Number"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="error"
+      color="danger"
+      *ngIf="!form.get('phone').valid && form.get('phone').touched"
+    >
+      <ion-text *ngIf="form.get('phone').hasError('required')"
+        >**Please enter your phone no.</ion-text
+      >
+      <ion-text
+        *ngIf="!form.get('phone').hasError('required') && form.get('phone').hasError('pattern')"
+        >** Enter valid phone no.</ion-text
+      >
+    </ion-text>
+    <!-- for password validation -->
+    <ion-item lines="none">
+      <ion-label position="floating"> Password</ion-label>
+      <ion-input
+        formControlName="password"
+        type="password"
+        placeholder="password"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-text
+      class="error"
+      color="danger"
+      *ngIf="!form.get('password').valid && form.get('password').touched"
+    >
+      <ion-text *ngIf="form.get('password').hasError('required')"
+        >**Please enter your password</ion-text
+      >
+      <ion-text
+        *ngIf="!form.get('password').hasError('required') && form.get('password').hasError('minlength')"
+        >**password must be atleast 8 characters</ion-text
+      >
+    </ion-text>
+
+    <ion-button class="forgotpw-btn" fill="clear">
+      Forgot password?
+    </ion-button>
+
+    <ion-button
+      class="login-btn"
+      size="large"
+      type="submit"
+      color="secondary"
+      expand="block"
+      (click)="onSubmit()"
+      [disabled]="!form.valid"
+      >Login</ion-button
+    >
+  </form>
+  <div class="footer">
+    <h5>Don't have an account?</h5>
+    <ion-button routerLink="/signup" fill="clear">Sign up</ion-button>
+  </div>
+</ion-content>

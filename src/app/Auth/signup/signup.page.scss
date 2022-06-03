@@ -1,0 +1,54 @@
+.header,
+.footer {
+  margin-top: 2vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 69px;
+    color: var(--ion-color-secondary);
+  }
+  h3 {
+    font-style: italic;
+    margin: .5rem;
+    font-size:18px;
+    color: var(--ion-color-secondary);
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--ion-color-secondary);
+  }
+}
+
+form {
+  margin: 1.2rem;
+  ion-item {
+    --background: white;
+    margin-bottom: 6px;
+    border-radius: 55px;
+    ion-label {
+      --color: black;
+      font-weight: 300;
+    }
+    ion-input {
+      --color: grey;
+      --placeholder-color: rgb(5, 5, 5);
+      --placeholder-font-weight: 20;
+    }
+  }
+  ion-button {
+   margin-top: 1.4rem;
+  }
+}
+
+.footer {
+  ion-button {
+    --color: black;
+  }
+}
