@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title
+      >{{roomData?.roomName ? roomData?.roomName : 'Room Details'}}</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="roomData?.roomName">
+    <!-- room images -->
+    <ion-slides pager="true" *ngIf="roomData?.images">
+      <ion-slide *ngFor="let photo of roomData?.images">
+        <div [ngStyle]="{ 'background-image': 'url(' + photo + ')' }"></div>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- basic details -->
+    <ion-list class="ion-no-padding">
+      <ion-item lines="none" color="primary">
+        <ion-label>
+          <h5>{{ roomData?.roomName }}</h5>
+          <ion-button (click)="saveToSaved()">
+            <ion-icon name="heart" color="danger"></ion-icon>
+          </ion-button>
+        </ion-label>
+      </ion-item>
+      <ion-item color="primary">
+        <ion-text>
+          <h5>
+            <ion-icon name="location"></ion-icon>{{ roomData?.locationName }}
+          </h5>
+          <h3><span>₹</span>{{ roomData?.price }}/Month</h3>
+          <h5>For {{ roomData?.forGender }}</h5>
+          <h5>
+            <ion-icon name="bed-outline"></ion-icon> {{
+            roomData?.furnishingStatus }}
+          </h5>
+        </ion-text>
+      </ion-item>
+    </ion-list>
+
+    <!-- amenities -->
+    <div class="amenities" *ngIf="roomData?.amenties">
+      <div class="ion-text-center">
+        <h4 class="ion-margin-top">Amenites</h4>
+      </div>
+      <ion-item
+        color="primary"
+        lines="none"
+        *ngFor="let amentie of roomData?.amenties"
+      >
+        <ion-label>
+          <ion-text>{{amentie}}</ion-text>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <!-- around the property -->
+
+    <div class="aroundTheProperty" *ngIf="roomData?.aroundThisProperty">
+      <div class="ion-text-center">
+        <h4 class="ion-margin-top">Around this room</h4>
+      </div>
+      <ion-row>
+        <ion-col *ngFor="let around of roomData?.aroundThisProperty"
+          ><div class="aroundTheProperty_sub">
+            <ion-label>{{around}}</ion-label>
+          </div></ion-col
+        >
+      </ion-row>
+    </div>
+    <!-- additional information -->
+    <div></div>
+
+    <!-- description -->
+    <div class="descOfProperty">
+      <h4>About the Room</h4>
+      <h3>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised .
+      </h3>
+    </div>
+
+    <h4>OWNERS DETAILS</h4>
+    <div class="ownerInfo">
+      <h3>Owner Name:: {{roomData.ownerDetails[0]}}</h3>
+      <h5>Occupation:: {{roomData.ownerDetails[2]}}</h5>
+      <h5>Brief desc::{{roomData.ownerDetails[1]}}</h5>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-button
+        class="sheduleVisitBtn"
+        id="date-modal"
+        *ngIf="roomData.availability"
+        >Shedule visit
+      </ion-button>
+
+      <ion-button
+        class="unavailableBtn"
+        *ngIf="!roomData.availability"
+        color="danger"
+      >
+        Unavailable
+      </ion-button>
+      <ion-button class="rentNowBtn" *ngIf="roomData.availability" (click)="makePayment()"
+        >Rent Now</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

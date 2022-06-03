@@ -1,0 +1,18 @@
+ion-header{
+  ion-toolbar{
+    padding: 9px;
+  }
+  ion-searchbar{
+    --border-radius: 26px;
+  }
+}
+
+ion-content {
+
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+  }
+}

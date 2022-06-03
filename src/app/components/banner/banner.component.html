@@ -1,0 +1,5 @@
+<ion-slides pager="true" *ngIf="bannerImages.length > 0">
+  <ion-slide *ngFor="let image of bannerImages">
+    <div [ngStyle]="{ 'background-image': 'url(' + image.banner + ')' }"></div>
+  </ion-slide>
+</ion-slides>

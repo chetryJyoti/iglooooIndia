@@ -1,0 +1,46 @@
+ion-header {
+  background: var(--ion-color-primary);
+  ion-list {
+    background: var(--ion-color-secondary);
+    padding-bottom: 5vh;
+    ion-item {
+      ion-label {
+        h2 {
+          font-weight: bold;
+          font-size: 3rem;
+          letter-spacing: 0.5px;
+        }
+        p {
+          font-weight: 500;
+          font-size: 1rem;
+        }
+      }
+    }
+    ion-icon {
+      color: white;
+    }
+  }
+  ion-searchbar{
+    --border-radius: 26px;
+  }
+  .popover {
+    margin: 0 8px;
+    margin-top: -30px;
+    z-index: 100;
+    ion-searchbar {
+      --icon-color: var(--ion-color-secondary);
+    }
+  }
+}
+
+ion-content {
+  ion-list {
+    background-color: var(--ion-color-primary);
+    ion-label,
+    h2 {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
+}

@@ -1,0 +1,29 @@
+
+  ion-list{
+    background-color: var(--ion-color-primary);
+    margin-bottom: 9px;
+    ion-item{
+      ion-thumbnail{
+        height: 16vh;
+        width: 26vw;
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+        }
+      }
+      p{
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      h3{
+        // color: var(--ion-color-medium)
+        font-weight: 400;
+        align-items: center;
+        ion-icon{
+          margin-right: 1px;
+          text-align: center;
+        }
+      }
+    }
+  }

@@ -1,0 +1,141 @@
+ion-content {
+  ion-slides {
+    margin-top: -1vh;
+    --bullet-background: black;
+    height: 30vh;
+    div {
+      height: 23vh;
+      width: 96%;
+      margin: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 2px;
+    }
+  }
+  ion-list {
+    ion-item {
+      ion-label {
+        display: flex;
+        justify-content: space-between;
+        h5{
+          font-size: 1.4rem;
+        }
+      }
+    }
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .amenities {
+    margin-top: 2rem;
+
+    ion-item {
+      --background: var(--ion-color-primary);
+      ion-label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 311.95px;
+        height: 42px;
+
+        background: linear-gradient(
+          180deg,
+          #ffffff 99.99%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        border: 1px solid #01d9d9;
+        ion-icon {
+          margin-right: 3rem;
+        }
+      }
+    }
+  }
+  .aroundTheProperty {
+    margin-top: 2rem;
+    .aroundTheProperty_sub {
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6px;
+      margin: 1rem;
+      width: 80%;
+      height: auto;
+      background: linear-gradient(
+        180deg,
+        #ffffff 99.94%,
+        #00d1ff 99.95%,
+        rgba(47, 218, 255, 0) 99.96%,
+        #12ff8d 99.97%,
+        #22cef4 99.98%
+      );
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.22));
+      border-radius: 6px;
+    }
+  }
+  h4 {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #9f9f9f;
+  }
+  .descOfProperty {
+    h3 {
+      margin: 1rem;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 22px;
+      color: #414141;
+    }
+  }
+  .ownerInfo {
+    text-align: center;
+  }
+}
+
+ion-footer {
+  ion-buttons {
+    margin: 1rem;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    .sheduleVisitBtn {
+      background: #ffffff;
+      color: blue;
+      border: 1px solid #1d18ff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      font-weight: 900;
+      width: 50%;
+      height: 40px;
+      margin-right: 6px;
+    }
+    .unavailableBtn {
+      background: #ffffff;
+      color: red;
+      border: 1px solid red;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      // border-radius: 10px;
+      font-weight: 900;
+      width: 50%;
+      height: 40px;
+      margin-right: 6px;
+    }
+    .rentNowBtn {
+      background: var(--ion-color-secondary);
+      color: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-weight: 900;
+      width: 50%;
+      height: 40px;
+    }
+  }
+}

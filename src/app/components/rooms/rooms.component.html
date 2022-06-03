@@ -1,0 +1,20 @@
+<ion-list>
+  <ion-item color="primary" lines="none">
+    <ion-thumbnail slot="start">
+      <img
+        [src]="
+          rooms?.images ? rooms.images[0] : 'assets/rooms-images/room2.jpg'
+        "
+      />
+    </ion-thumbnail>
+    <ion-label>
+      <ion-text>
+        <p>₹ {{ rooms.price }} /Month</p>
+        <h2 style="color: blue;">{{ rooms.roomName }}</h2>
+        <h3><ion-icon name="location"></ion-icon>{{ rooms?.locationName }}</h3>
+        <h3>For {{ rooms?.forGender }}</h3>
+        <h3><ion-icon name="bed"></ion-icon>{{ rooms?.furnishingStatus }}</h3>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+</ion-list>

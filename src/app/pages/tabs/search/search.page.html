@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-searchbar
+      color="dark"
+      animated="true"
+      debounce="800"
+      placeholder="search for city"
+      (ionChange)="onSearchChange($event)"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="spinner" *ngIf="isLoading">
+    <ion-spinner name="circles" color="secondary"></ion-spinner>
+  </div>
+
+  <app-empty-screen
+    *ngIf="!isLoading && rooms?.length===0 || query?.length===0"
+    [model]="model"
+  ></app-empty-screen>
+
+  <div *ngIf="!isLoading">
+    <app-rooms *ngFor="let room of rooms" [rooms]="room"
+    [routerLink]="['/','tabs','rooms',room.roomId]"></app-rooms>
+  </div>
+</ion-content>

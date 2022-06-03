@@ -1,3 +1,106 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+  <ion-split-pane contentId="main">
+    <!--  the side menu  -->
+    <ion-menu contentId="main">
+      <ion-header>
+        <ion-toolbar  color="secondary">
+          <ion-item class="ion-margin-top" lines="none"  color="secondary">
+            <ion-avatar slot="start">
+              <img src="/assets/user-avatar/dummyUser.jpg" />
+            </ion-avatar>
+            <ion-label>Hello Dummy </ion-label>
+          </ion-item>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button menuClose fill="clear" routerLink="login">
+                <ion-icon name="log-in" color="secondary"></ion-icon>
+                <ion-label color="dark">Login</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button fill="clear" routerLink="signup">
+                <ion-icon name="person-add" color="secondary"></ion-icon>
+                <ion-label color="dark">Register</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="logo-whatsapp" color="success"></ion-icon>
+                <ion-label color="dark">ContactUs</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+        </ion-list>
+        <!--  -->
+        <ion-list>
+          <ion-item>
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="home" color="secondary"></ion-icon>
+                <ion-label color="dark">Home</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="heart" color="secondary"></ion-icon>
+                <ion-label color="dark">Shortlist</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="person" color="secondary"></ion-icon>
+                <ion-label color="dark">Profile</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+        </ion-list>
+
+        <!--  -->
+        <ion-list>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon
+                  name="information-circle"
+                  color="secondary"
+                ></ion-icon>
+                <ion-label color="dark">About US</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="help-circle" color="secondary"></ion-icon>
+                <ion-label color="dark">FAQ</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="key" color="secondary"></ion-icon>
+                <ion-label color="dark">PRIVACY POLICY</ion-label>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
