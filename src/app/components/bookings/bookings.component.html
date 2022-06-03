@@ -1,3 +1,23 @@
-<p>
-  bookings works!
-</p>
+<ion-list class="ion-no-padding borderBottom">
+  <ion-list-header color="primary">
+    <ion-label color="secondary ">Your Booked Rooms</ion-label>
+  </ion-list-header>
+  <ion-item color="primary" lines="none">
+    <ion-thumbnail slot="start">
+      <img [src]="bookedRoom?.images[0]" />
+    </ion-thumbnail>
+    <ion-label>
+      <ion-text>
+        <p>₹ {{ bookedRoom?.price }} /Month</p>
+        <h2>{{ bookedRoom?.roomName }}</h2>
+        <h3>
+          <ion-icon name="location"></ion-icon>{{ bookedRoom?.locationName }}
+        </h3>
+        <h3>For {{ bookedRoom?.forGender }}</h3>
+        <h3>
+          <ion-icon name="bed"></ion-icon>{{ bookedRoom?.furnishingStatus }}
+        </h3>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+</ion-list>

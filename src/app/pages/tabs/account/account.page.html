@@ -20,32 +20,15 @@
   <ion-list class="ion-no-padding">
     <ion-item color="primary">
       <ion-label>
-        <ion-text class="ion-text-uppercase"> <h4>CHETRY RAJ</h4> </ion-text>
-        <p>90474389534 | chetry@gmail.com</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-list class="ion-no-padding borderBottom">
-    <ion-list-header color="primary">
-      <ion-label color="secondary ">Your Rooms</ion-label>
-    </ion-list-header>
-    <ion-item color="primary" lines="none">
-      <ion-thumbnail slot="start">
-        <img src="assets/rooms-images/room2.jpg" />
-      </ion-thumbnail>
-      <ion-label>
-        <ion-text>
-          <p>₹ 30000 /Month</p>
-          <h2 >Pg NAME</h2>
-          <h3><ion-icon name="location"></ion-icon>Location</h3>
-          <h3>For girls</h3>
-          <h3><ion-icon name="bed"></ion-icon>furnished</h3>
+        <ion-text class="ion-text-uppercase">
+          <h4>{{profile.name}}</h4>
         </ion-text>
+        <p>{{profile.phone }} | {{profile.email}}</p>
       </ion-label>
-      <ion-note slot="end">
-        Booked
-        <ion-icon name="checkmark-circle-outline" color="success"></ion-icon>
-      </ion-note>
     </ion-item>
   </ion-list>
+  <app-bookings
+    *ngFor="let booked of bookings"
+    [bookedRoom]="booked"
+  ></app-bookings>
 </ion-content>

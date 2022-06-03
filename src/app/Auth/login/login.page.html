@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary" class="ion-no-border" >
+  <ion-toolbar color="primary" class="ion-no-border">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
@@ -32,15 +32,15 @@
       >
       <ion-text
         *ngIf="!form.get('phone').hasError('required') && form.get('phone').hasError('pattern')"
-        >** Enter valid phone no.</ion-text
+        >**Enter valid phone no.</ion-text
       >
     </ion-text>
     <!-- for password validation -->
     <ion-item lines="none">
       <ion-label position="floating"> Password</ion-label>
       <ion-input
-        formControlName="password"
         type="password"
+        formControlName="password"
         placeholder="password"
         required
       ></ion-input>
@@ -64,6 +64,7 @@
     </ion-button>
 
     <ion-button
+      *ngIf="!isLogin"
       class="login-btn"
       size="large"
       type="submit"
@@ -73,6 +74,16 @@
       [disabled]="!form.valid"
       >Login</ion-button
     >
+    <ion-button
+      *ngIf="isLogin"
+      size="large"
+      color="secondary"
+      expand="block"
+      class="login-btn"
+      [disabled]="!form.valid"
+    >
+      <ion-spinner color="white"></ion-spinner>
+    </ion-button>
   </form>
   <div class="footer">
     <h5>Don't have an account?</h5>
